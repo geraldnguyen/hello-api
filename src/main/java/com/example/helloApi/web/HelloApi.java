@@ -12,6 +12,7 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @Log4j2
 public class HelloApi {
+  private boolean isStoned = false;
 
   @Value("${hello.default:World}")
   private String defaultName;
@@ -23,6 +24,12 @@ public class HelloApi {
 
   @GetMapping("/{name}")
   public String helloName(@PathVariable("name") String name) {
+    if ("medusa".equals(name)) {
+      isStoned = true;
+    }
+    if (isStoned) {
+      throw new RuntimeException("Stoned");
+    }
     String response = String.format("Hello %s", name);
     log.info(response);
     return response;

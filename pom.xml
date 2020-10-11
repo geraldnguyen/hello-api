@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>hello-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1-MEDUSA</version>
 	<name>helloApi</name>
 	<description>Hello API </description>
 
